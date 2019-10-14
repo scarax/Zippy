@@ -1,5 +1,90 @@
 @import 'vars';
-@import 'fonts';
 @import 'libs';
 @import 'mixins';
 @import 'main.scss';
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 2px;
+  background-color: $clr-primary;
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .1s ease;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: lighten($clr-primary, 3%);
+  }
+  &:active {
+    background-color: darken($clr-primary, 3%);
+  }
+}
+.button--accent {
+  background-color: $clr-accent;
+  color: #323232;
+  &:hover,
+  &:focus {
+    background-color: lighten($clr-accent, 3%);
+  }
+  &:active {
+    background-color: darken($clr-accent, 3%);
+  }
+}
+.page-header {
+  min-height: 692px;
+  padding: 2.5em 0;
+  background-color: #3d566c;
+  background-image: url('../img/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+}
+.page-header__top {
+  margin-bottom: 7em;
+}
+.page-header__logo-image {
+  width: 75px;
+}
+.main-nav {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+}
+.site-list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  @include reset-list();
+}
+.site-list__item:not(:first-child) {
+  margin-left: 2em;
+}
+.site-list__link {
+  display: block;
+  padding: em(10) 0;
+  font-size: rem(14);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  &:hover,
+  &:focus {
+    color: $clr-accent;
+  }
+}
+.hero__title {
+  margin: 0;
+  margin-bottom: 1em;
+  font-size: 2.5rem;
+}
+.hero__description {
+  margin: 0;
+  margin-bottom: 2em;
+  font-size: 1.25rem;
+}
