@@ -39,7 +39,7 @@ gulp.task('style:build', function() {
 
 gulp.task('js', function() {
   return gulp.src('source/js/**/*.js')
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest('build/js/'))
   .pipe(browserSync.stream());
 });
