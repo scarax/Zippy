@@ -11,7 +11,7 @@
   background-color: #fefefe;
   color: #323232;
   font: inherit;
-  font-size: 0.75em;
+  font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -65,6 +65,9 @@
 .page-header__top {
   margin-bottom: 7em;
 }
+.page-header__logo {
+  display: inline-block;
+}
 .page-header__logo-image {
   width: 75px;
 }
@@ -117,7 +120,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    width: 1120px;
+    width: 100%;
     height: 2px;
     margin: 0 auto;
     background-color: #e7e7e7;
@@ -427,6 +430,7 @@
   margin: 0;
   margin-bottom: 1em;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 .blog-card__time {
   margin-bottom: 1.5em;
@@ -437,31 +441,213 @@
   margin: 0;
   margin-bottom: 1.75em;
 }
-.contacts__main {
+.contact-us__main {
   padding: 3em 2.75em;
   background-color: $clr-accent;
 }
-.contacts__title {
+.contact-us__title {
   font-size: 2.75rem;
   margin: 0;
   margin-bottom: 0.75em;
 }
-.contacts__form {
+.contact-us__form {
   display: flex;
   flex-flow: column;
-  width: 50%;
+  width: 65%;
+  max-width: 450px;
 }
-.contacts__label {
+.contact-us__label {
   margin-bottom: 0.85em;
   font-size: rem(14);
   font-weight: 700;
   text-transform: uppercase;
 }
-.contacts__input,
-.contacts__area {
+.contact-us__input,
+.contact-us__area {
   margin-bottom: 1.5em;
   padding: 0.75em 1em;
   border: none;
   font: inherit;
   font-size: rem(14);
+}
+.page-footer {
+  padding: 5em 0;
+  background-color: #fefefe;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.address__title,
+.social__title,
+.contacts__title {
+  margin: 0;
+  margin-bottom: 1.5em;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.address__location {
+  font-style: normal;
+}
+.social__list,
+.contacts-list {
+  @include reset-list();
+}
+.social__list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  width: 40%;
+  margin: 0 auto;
+}
+.social__item {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+.social__link {
+  display: inline-block;
+  padding: 0 0.5em;
+}
+.contacts__item {
+  margin-bottom: 0.5em;
+}
+@media (max-width: 1199px) {
+  .social__list {
+    width: 50%;
+  }
+  .contact-us__form {
+    width: 75%;
+  }
+}
+@media (max-width: 991px) {
+  .page-header {
+    min-height: auto;
+    padding-bottom: 6em;
+  }
+  .site-list__item:not(:first-child) {
+    margin-left: 1.5em;
+  }
+  .contact-us iframe {
+    height: 400px;
+  }
+  .contact-us__main {
+    padding: 2em 3em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .contact-us__form {
+    max-width: none;
+  }
+  .social__list {
+    width: 75%;
+  }
+}
+@media (max-width: 767px) {
+  .page-header {
+    padding-bottom: 4em;
+  }
+  .page-header__logo {
+    margin-bottom: 0.5em;
+  }
+  .main-nav {
+    justify-content: flex-start;
+  }
+  .site-list {
+    justify-content: flex-start;
+  }
+  .site-list__item:not(:last-child) {
+    margin-right: 1em;
+  }
+  .site-list__item:not(:first-child) {
+    margin-left: 0;
+  }
+  .page-header__top {
+    margin-bottom: 4em;
+  }
+  .welcome__description {
+    margin-bottom: 1.5em;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .welcome__image {
+    display: none;
+  }
+  .product-card {
+    min-height: auto;
+    margin-bottom: 2em;
+  }
+  .product-card__title {
+    margin-bottom: 1em;
+  }
+  .product-card__text {
+    margin-bottom: 1.5em;
+  }
+  .pricing-card {
+    margin-bottom: 2em;
+  }
+  .media {
+    padding: 5em 0;
+  }
+  .newsletter__input {
+    width: 75%;
+  }
+  .blog-card {
+    margin-bottom: 2.5em;
+  }
+  .blog-card__image {
+    margin-bottom: 1em;
+  }
+  .blog-card__time {
+    margin-bottom: 0.75em;
+  }
+  .blog-card__text {
+    margin-bottom: 1em;
+  }
+  .social__list {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .welcome {
+    padding: 4em 0;
+  }
+  .pricing {
+    padding: 4em 0;
+  }
+  .media {
+    padding: 4em 0;
+  }
+  .team {
+    padding: 4em 0;
+  }
+  .newsletter {
+    padding-bottom: 4em;
+  }
+  .newsletter__form {
+    justify-content: center;
+  }
+  .newsletter__input {
+    width: 90%;
+    margin-bottom: 2em;
+  }
+  .blog {
+    padding: 4em 0;
+  }
+  .contact-us__main {
+    padding: 1.5em;
+  }
+  .contact-us__form {
+    width: 90%;
+  }
+  .page-footer {
+    padding: 3em 0;
+  }
+  .address {
+    margin-bottom: 1em;
+  }
+  .social {
+    margin-bottom: 1em;
+  }
+  .social__list {
+    width: 50%;
+  }
 }
